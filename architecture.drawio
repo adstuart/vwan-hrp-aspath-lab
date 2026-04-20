@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" modified="2026-04-20T18:00:00.000Z" agent="Copilot" version="24.0.0" type="device">
+  <diagram name="VWAN HRP Lab" id="hrp-lab">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="VWAN Hub Routing Preference — ExpressRoute (default) vs AS Path" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#323130;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="1000" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Topology: two regional VWAN hubs share one ExpressRoute circuit → each hub learns the remote spoke prefix via both ER (MSEE) and Hub-to-Hub" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#605e5c;" vertex="1" parent="1">
+          <mxGeometry x="200" y="50" width="1000" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="er-cir" value="ExpressRoute Circuit&#xa;(Premium)&#xa;Peering ASN 12076" style="image;aspect=fixed;html=1;image=img/lib/azure2/networking/ExpressRoute_Circuits.svg;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="660" y="120" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="msee-note" value="MSEE reflects each hub's prefixes&#xa;to the other hub's ER gateway" style="text;html=1;strokeColor=none;fillColor=#fff4ce;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=2;fontColor=#8a6d00;" vertex="1" parent="1">
+          <mxGeometry x="790" y="130" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hub1-box" value="Region A — hub-A&#xa;10.100.0.0/23  ASN 65515" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#E1F5FE;strokeColor=#0078D4;verticalAlign=top;fontSize=12;fontStyle=1;container=1;pointerEvents=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="260" width="400" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="hub1" value="VWAN Hub A" style="image;aspect=fixed;html=1;image=img/lib/azure2/networking/Virtual_WANs.svg;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="130" y="310" width="55" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ergw1" value="ER Gateway" style="image;aspect=fixed;html=1;image=img/lib/azure2/networking/Virtual_Network_Gateways.svg;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="280" y="310" width="55" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="spokevnet1" value="spoke-A VNet&#xa;10.101.0.0/24" style="image;aspect=fixed;html=1;image=img/lib/azure2/networking/Virtual_Networks.svg;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="140" y="480" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vm1" value="vm-spoke-A&#xa;10.101.0.4" style="image;aspect=fixed;html=1;image=img/lib/azure2/compute/Virtual_Machine.svg;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="280" y="480" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hub2-box" value="Region B — hub-B&#xa;10.200.0.0/23  ASN 65515" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFF4E5;strokeColor=#D83B01;verticalAlign=top;fontSize=12;fontStyle=1;container=1;pointerEvents=0;" vertex="1" parent="1">
+          <mxGeometry x="900" y="260" width="400" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="hub2" value="VWAN Hub B" style="image;aspect=fixed;html=1;image=img/lib/azure2/networking/Virtual_WANs.svg;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1195" y="310" width="55" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ergw2" value="ER Gateway" style="image;aspect=fixed;html=1;image=img/lib/azure2/networking/Virtual_Network_Gateways.svg;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1045" y="310" width="55" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="spokevnet2" value="spoke-B VNet&#xa;10.201.0.0/24" style="image;aspect=fixed;html=1;image=img/lib/azure2/networking/Virtual_Networks.svg;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="480" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2" value="vm-spoke-B&#xa;10.201.0.4" style="image;aspect=fixed;html=1;image=img/lib/azure2/compute/Virtual_Machine.svg;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="480" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-er1" style="endArrow=classic;html=1;strokeColor=#0078D4;strokeWidth=2;" edge="1" parent="1" source="ergw1" target="er-cir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-er1-label" value="AzurePrivatePeering" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#605e5c;" vertex="1" parent="1">
+          <mxGeometry x="420" y="220" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e-er2" style="endArrow=classic;html=1;strokeColor=#D83B01;strokeWidth=2;" edge="1" parent="1" source="ergw2" target="er-cir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-er2-label" value="AzurePrivatePeering" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#605e5c;" vertex="1" parent="1">
+          <mxGeometry x="810" y="220" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e-h2h" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#107C10;strokeWidth=3;dashed=1;" edge="1" parent="1" source="hub1" target="hub2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-h2h-label" value="Hub-to-Hub (automatic, Azure backbone)&#xa;AS-path injected: 65520-65520" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;labelBackgroundColor=#FFFFFF;fontColor=#107C10;" vertex="1" parent="1">
+          <mxGeometry x="540" y="320" width="260" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e-sp1" style="endArrow=classic;html=1;strokeColor=#605e5c;" edge="1" parent="1" source="spokevnet1" target="hub1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-sp2" style="endArrow=classic;html=1;strokeColor=#605e5c;" edge="1" parent="1" source="spokevnet2" target="hub2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-vm1" style="endArrow=none;html=1;strokeColor=#605e5c;" edge="1" parent="1" source="vm1" target="spokevnet1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-vm2" style="endArrow=none;html=1;strokeColor=#605e5c;" edge="1" parent="1" source="vm2" target="spokevnet2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-bad" value="❌  HRP = ExpressRoute (default)&#xa;Remote spoke learned via ER (AS-path 12076-12076)&#xa;Spoke→Spoke traffic traverses MSEE &quot;bounce&quot;&#xa;RTT ~46 ms" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDE7E9;strokeColor=#A4262C;align=left;verticalAlign=top;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="660" width="560" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-good" value="✅  HRP = AS Path&#xa;ER route AS-path shown as 12076-12076-12076 (len 3) — extra 12076 added vs default mode&#xa;H2H AS-path is 65520-65520 (len 2) → H2H wins on shortest AS-path&#xa;Remote spoke next-hop changes to &quot;Remote Hub&quot;. Spoke→Spoke stays on Azure backbone. RTT ~26 ms" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DFF6DD;strokeColor=#107C10;align=left;verticalAlign=top;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="720" y="660" width="580" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ri-note" value="⚠  If your hubs are Secured Hubs (Azure Firewall) you must also configure Routing Intent so private traffic flows through the firewall on the chosen path. HRP decides the path between hubs; Routing Intent decides what inspects it." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4CE;strokeColor=#8A6D00;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="770" width="1220" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
